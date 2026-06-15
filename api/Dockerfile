@@ -36,4 +36,4 @@ ENV PYTHONPATH=/app/src
 ENV CUDA_VISIBLE_DEVICES=0
 
 # Run the Flask API
-CMD ["python3", "api/app.py"]
+CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:5000", "api.app:app"]
