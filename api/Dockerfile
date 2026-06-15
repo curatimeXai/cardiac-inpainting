@@ -18,6 +18,10 @@ COPY requirements.txt .
 # Install Python dependencies
 RUN pip3 install --no-cache-dir -r requirements.txt
 
+# Install Flask API dependencies
+COPY api/requirements.txt ./api/requirements.txt
+RUN pip3 install --no-cache-dir -r api/requirements.txt
+
 # Copy the rest of the project
 COPY . .
 
